@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Sample</title>
+</head>
+<style>
+	table {
+		border-collapse: collapse;
+		width: 30%;
+		text-align: left;
+	}
+	th,	td {
+		border: 1px solid #0056b3;
+		padding: 8px;
+	}
+	button {
+		background-color: blue;
+		padding: 8px;
+		color: white;
+		border: blue;
+	}
+	button:hover {
+		cursor: pointer;
+		background-color: #0056b3;
+
+	}
+</style>
+<body>
+	<h1>Item</h1>
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+			<td>Chips</td>
+			<td><button id='addToCartChips'>Add To Cart</button></td>
+		</tr>
+		<tr>
+			<td>Soda</td>
+			<td><button id='addToCartSoda'>Add To Cart</button></td>
+		</tr>
+		<tr>
+			<td>Cookies</td>
+			<td><button id='addToCartCookies'>Add To Cart</button></td>
+		</tr>
+	</table>
+	<h1>Shopping Cart</h1>
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Quantity</th>
+		</tr>
+		<tr>
+			<td>Chips</td>
+			<td>
+				<p id='chips'>0</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Soda</td>
+			<td>
+				<p id='soda'>0</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Cookies</td>
+			<td>
+				<p id='cook'>0</p>
+			</td>
+		</tr>
+	</table>
+
+	<script>
+		var a = 0, b = 0, c = 0;
+		document.getElementById('addToCartChips').addEventListener('click', function () {
+			a = a + 1;
+			document.getElementById('chips').innerHTML = a;
+		});
+		document.getElementById('addToCartSoda').addEventListener('click', function () {
+
+			b = b + 1;
+			document.getElementById('soda').innerHTML = b;
+		});
+		document.getElementById('addToCartCookies').addEventListener('click', function () {
+
+			c = c + 1;
+			document.getElementById('cook').innerHTML = c;
+		});
+	</script>
+</body>
+</html>

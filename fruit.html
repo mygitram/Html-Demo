@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        #image-container img {
+            margin-top: 20px;
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <select id="fruit-select">
+            <option value="">Select a fruit</option>
+            <option value="cherry">Cherry</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+        </select>
+
+        <button onclick="showImage()">Show Image</button>
+        <div id="image-container"></div>
+
+    </div>
+    <script>
+        function showImage() {
+            const fruit =  document.getElementById("fruit-select").value;
+            const imageContainer = document.getElementById("image-container");
+            imageContainer.innerHTML = "";
+
+            if (fruit) {
+                const img =  document.createElement("img");
+                img.src = fruit+'.jpeg'; 
+                img.alt = fruit;
+                imageContainer.appendChild(img);
+            }
+        }
+    </script>
+</body>
+
+</html>

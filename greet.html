@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Greeting Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #red-color {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #colorButton:hover {
+            opacity: 0.8;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div>
+        <h1 id="modifiable-paragraph">Hello, World!</h1>
+        <input type="number" id="font-Size-Input" placeholder="Enter font size in px" oninput="updateFontSize()">
+        <br><br>
+        <input type="text" id="text-input" placeholder="Change text">
+        <button id="red-color">Change Color to Red</button>
+    </div>
+
+    <script>
+        document.getElementById('font-Size-Input').addEventListener('input',function(){
+            var fontSize = document.getElementById('font-Size-Input').value;
+            if (fontSize) {
+                document.getElementById('modifiable-paragraph').style.fontSize = fontSize + 'px';
+            }
+        });
+        document.getElementById('red-color').addEventListener('click',function(){
+            document.getElementById('modifiable-paragraph').style.color = 'red';
+        });
+        document.getElementById('text-input').addEventListener('input',function(){
+            var msg = document.getElementById('text-input').value;
+            document.getElementById('modifiable-paragraph').innerHTML = msg;
+        });
+    </script>
+</body>
+</html>
