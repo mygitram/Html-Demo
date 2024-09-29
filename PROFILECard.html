@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .profile-card {
+           width: 40%;
+           border: 1px solid black;
+           border-radius: 10px;
+           padding: 20px;
+           text-align: center;
+       } 
+       .hidden {
+           display: none;
+       }
+    </style>
+</head>
+<body>
+  <div class="profile-card">
+    <img src="" alt="" srcset="">
+    <h2 class="name">John Doe</h2>
+    <p class="bio">I am John Doe</p>
+    <button class="follow-btn">Follow</button>
+    <p id="follow-status" class="hidden">You are following John Doe</p>
+  </div>  
+
+  <script>
+    const followButton = document.querySelector('.follow-btn');
+    const followStatus = document.getElementById('follow-status');
+
+    followButton.addEventListener('click', function() {
+        followStatus.classList.toggle('hidden');
+
+        // Toggle button text between "Follow" and "Unfollow"
+        if (followButton.textContent === 'Follow') {
+            followButton.textContent = 'Unfollow';
+        } else {
+            followButton.textContent = 'Follow';
+        }
+    });
+  </script>
+</body>
+</html>
